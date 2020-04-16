@@ -1,0 +1,6 @@
+Mark,M,31,R&D
+Lauren,F,25,Sales
+Katie,F,51,R&D
+Murray,M,22,Sales
+Bernard,M,45,Sales
+Jodie,F,29,R&D
