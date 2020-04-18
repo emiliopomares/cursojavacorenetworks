@@ -37,6 +37,7 @@ public class Iterables {
 		}
 
 		System.out.println();
+		System.out.println(" ============================= ");
 		System.out.println();
 
 		// slightly better, more readable way
@@ -45,6 +46,7 @@ public class Iterables {
 		}
 
 		System.out.println();
+		System.out.println(" ============================= ");
 		System.out.println();
 
 		// Using a iterator
@@ -54,6 +56,7 @@ public class Iterables {
 		}
 
 		System.out.println();
+		System.out.println(" ============================= ");
 		System.out.println();
 
 		// The compact way: using streams + lambda expressions...
