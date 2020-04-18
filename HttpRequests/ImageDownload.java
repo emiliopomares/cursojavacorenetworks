@@ -22,7 +22,7 @@ public class ImageDownload {
 				byte[] buffer = new byte[1024];
 				int bytesRead;
 				while((bytesRead = responseStream.read(buffer)) > 0) {
-					fileStream.write(buffer);
+					fileStream.write(buffer, 0, bytesRead);
 				}
 				fileStream.close();
 				responseStream.close();
