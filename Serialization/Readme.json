@@ -1,0 +1,16 @@
+{
+	"Name":"Rachel",
+	"Age":21,
+	"Pets": [
+		{
+			"Name":"Kitty",
+			"Species":"Cat",
+			"Vaccinated":true
+		},
+		{
+			"Name":"Munchie",
+			"Species":"Shark",
+			"Vaccinated":false
+		}
+	]
+}
