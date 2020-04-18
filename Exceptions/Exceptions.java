@@ -35,6 +35,9 @@ public class Exceptions {
 		try {
 			stuffDoer.TryToIncreaseCounter();
 		}
+		//catch(Exception e) {
+		//	System.out.println("This exception occurred: " + e);
+		//}
 		catch(SomethingWentWrongException e) {
 			System.out.println("This exception occurred: " + e);
 		}

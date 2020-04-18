@@ -9,54 +9,22 @@ import java.util.List;
 import java.util.ArrayList;
 import java.io.IOException;
 import java.io.FileInputStream;
+import java.io.InputStreamReader;
 import java.io.FileOutputStream;
 import java.io.BufferedReader;
 import java.util.stream.Stream;
 
 public class ListFiles {
 
-	// Reading file with more current APIs
-	public static String readFileContentsBuffer(File f) {
-		return "";
-	}
-
-	// Slightly better way to read files
-	/*public static String readFileContentsBuffer(File f) {
+	public static String readFileContents(File f) {
 		String fileContent = "";
 		FileInputStream fileStream = new FileInputStream(f);
+		
 		BufferedReader bufReader = new BufferedReader(fileStream);
 		String line = bufReader.readLine();
 		while(!line.equals("")) {
 			fileContents += line;
 		}
-		return fileContent;
-	}*/
-
-	// A rather low level way of reading files. For academic purposes
-	public static String readFileContentsUsingStreams(File f) {
-		String fileContent = "";
-		try {
-			FileInputStream fileStream = new FileInputStream(f);
-                	byte[] byteBuffer = new byte[8];
-
-                	int readBytes = -1;
-                	do {
-				readBytes = fileStream.read(byteBuffer);
-				if(readBytes == -1)
-				{
-					break;
-				}
-				if(readBytes < byteBuffer.length) {
-					byteBuffer[readBytes] = 0;
-				}
-				String segment = new String(byteBuffer);
-				fileContent += segment;
-			} while(readBytes > 0);
-		}
-		catch(IOException e) {
-			fileContent = "<Error reading file>";
-		}
-		
 		return fileContent;
 	}
 
@@ -93,7 +61,7 @@ public class ListFiles {
 					if(filepath.endsWith(desiredExtension)) {
 						
 						System.out.println(desiredExtension + " file found: " + filepath);
-						System.out.println(readFileContentsUsingStreams(file));
+						System.out.println(readFileContents(file));
 						System.out.println("");
 							
 					}

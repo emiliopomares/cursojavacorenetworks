@@ -1,0 +1,6 @@
+[Desktop]
+Resolution=1920x1080
+
+[Remote]
+Server=https://www.myserver.com
+Port=991
