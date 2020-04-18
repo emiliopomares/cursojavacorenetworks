@@ -1,6 +1,7 @@
 // An interface with the @FunctionalInterface decorator
 //  will need to expose one single method. If you try to expose
 //  more you will get a compile-time error
+
 @FunctionalInterface
 interface MessagePrinter {
 	public void PrintMessage(String msg);
