@@ -1,4 +1,6 @@
+*.DS_STORE
 *.class
 ./**/*.class
 *.swp
 ./**/*.swp
+./**/*.DS_STORE
