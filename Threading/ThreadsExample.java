@@ -52,7 +52,7 @@ class PeriodicRequest extends Thread {
 }
 
 public class ThreadsExample {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 
 		// How to create threads: option 1) instance of class that implements Runnable
 		PeriodicAnnouncement announceOne = new PeriodicAnnouncement(2.0, "Shut up!");
@@ -63,6 +63,11 @@ public class ThreadsExample {
 		threadTwo.start();
 		System.out.println("Both threads have been started");
 
+		
+		// Wait until these threads finish
+		threadOne.join();
+		threadTwo.join();
+	
 
 		// Option 2) using a class that extends Thread
 		PeriodicRequest req = new PeriodicRequest("a glass of water");

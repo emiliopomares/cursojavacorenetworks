@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<transaction>
+  <id>013293</id>
+  <type>addition</type>
+  <operands>
+    <type>double</type>
+    <value>3.1416</value>
+  </operands>
+  <operands>
+    <type>double</type>
+    <value>2.7183</value>
+  </operands>
+</transaction>
