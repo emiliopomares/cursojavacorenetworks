@@ -1,4 +1,7 @@
-import java.sql.*;
+import java.sql.DriverManager;
+import java.sql.Connection;
+import java.sql.Statement;
+import java.sql.ResultSet;
 
 import com.mysql.jdbc.Driver;
 
@@ -12,8 +15,8 @@ public class MySQL {
 		try {
 			Connection con = DriverManager.getConnection("jdbc:mysql://"+dbHost+":3306/RocketEngines",dbUser,dbPasswd);
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("select * from Engines where designer=\"Space-X\"");
-			System.out.println("Getting all rocket engines designed by Space-X: ");
+			ResultSet rs = stmt.executeQuery("select * from Engines where designer=\"SpaceX\"");
+			System.out.println("Getting all rocket engines designed by SpaceX: ");
 			while(rs.next()) {
 				System.out.println(rs.getString(1));
 			}
