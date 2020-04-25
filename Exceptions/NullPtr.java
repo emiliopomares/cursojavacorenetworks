@@ -1,3 +1,6 @@
+// NullReferenceException example
+// by Emilio Pomares
+
 class Person {
 	private String name;
 	

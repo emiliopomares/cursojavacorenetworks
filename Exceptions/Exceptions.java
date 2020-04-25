@@ -1,3 +1,6 @@
+// Exception handling example
+// by Emilio Pomares
+
 // Let's define out very own exception
 
 class SomethingWentWrongException extends Exception {

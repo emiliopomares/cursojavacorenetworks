@@ -1,3 +1,6 @@
+// Divid-by-zero RuntimeException example
+// by Emilio Pomares
+
 import java.util.Scanner;
 
 public class DivByZero {

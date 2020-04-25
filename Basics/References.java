@@ -1,3 +1,6 @@
+// In-memory references example
+// by Emilio Pomares
+
 class Person {
 	private String name;
 	private int age;
