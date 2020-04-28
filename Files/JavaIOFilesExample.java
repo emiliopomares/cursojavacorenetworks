@@ -4,7 +4,7 @@ import java.io.InputStreamReader;
 import java.io.BufferedReader;
 import java.io.IOException;
 
-public class JavaIOFilesExample {
+public class Ejemplo3 {
 		
 	final static String filename = "./config.txt";
 
@@ -22,6 +22,8 @@ public class JavaIOFilesExample {
 			String[] fields = line.split("=");
 			
 			System.out.println("According to config file, server port is: " + fields[1]);
+
+			bufferedReader.close();
 
 		}
 		catch(IOException e) {
