@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF8"?>
+<moviedb>
+	<movie>
+		<title>Titanic</title>
+		<watched>0</watched>	
+	</movie>
+	<movie>
+		<title>Watchmen</title>
+		<watched>0</watched>
+	</movie>
+</moviedb>
