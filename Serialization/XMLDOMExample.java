@@ -1,9 +1,18 @@
 import java.io.File;
 import java.io.IOException;
+import java.io.StringWriter;
+import javax.xml.transform.stream.StreamResult;
+import java.io.PrintWriter;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.TransformerConfigurationException;
+import javax.xml.transform.TransformerException;
+
 
 import org.xml.sax.SAXException;
 
@@ -44,6 +53,30 @@ public class XMLDOMExample {
 				System.out.println("Operand number " + (i+1) + ", type = " + ((Element)operand.getElementsByTagName("type").item(0)).getTextContent());
 			}
 
+			// To write the XML back to file, you can use this Java8 feature:
+			//new XMLWriter(new FileOutputStream(fileName),
+              		//	new OutputFormat(){{
+                        //		setEncoding("UTF-8");
+                        //		setIndent("    ");
+                        //		setTrimText(false);
+                        //		setNewlines(true);
+                        //		setPadText(true);
+              		//}}).write(doc);
+
+			// or this outrageous but Java7-compliant snipped
+			StringWriter writer = new StringWriter();
+			StreamResult result = new StreamResult(writer);
+			TransformerFactory tf = TransformerFactory.newInstance();
+			Transformer transformer = tf.newTransformer();
+			DOMSource domSource = new DOMSource(doc);
+			transformer.transform(domSource, result);
+			System.out.println("XML IN String format is: \n" + writer.toString());
+			String text = writer.toString();
+			PrintWriter out = new PrintWriter("filename.txt");
+			out.println(text);
+			out.close();
+			
+			
 		}
 		catch(SAXException e) {
 			System.out.println("This exception occurred: " + e);
@@ -53,6 +86,12 @@ public class XMLDOMExample {
 		}
 		catch(IOException e) {
 			System.out.println("This exception occurred: " + e);
+		}
+		catch(TransformerConfigurationException e) {
+
+		}
+		catch(TransformerException e) {
+
 		}
 	}	
 }
